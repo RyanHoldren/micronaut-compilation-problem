@@ -1,0 +1,17 @@
+plugins {
+    id "java-library"
+}
+
+repositories {
+    mavenCentral()
+}
+
+def MICRONAUT_VERSION = "2.3.3";
+
+dependencies {
+    annotationProcessor enforcedPlatform("io.micronaut:micronaut-bom:$MICRONAUT_VERSION")
+    implementation enforcedPlatform("io.micronaut:micronaut-bom:$MICRONAUT_VERSION")
+    annotationProcessor group: "io.micronaut", name: "micronaut-inject-java"
+    implementation group: "io.micronaut", name: "micronaut-inject"
+    implementation group: "javax.inject", name: "javax.inject", version: "1"
+}
